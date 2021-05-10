@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import NavBar from './component/NavBar';
+import SideBar from './component/SideBar';
+import Main from './component/Main';
+
+import { Container, Row, Col,Card, Button, CardTitle, CardText } from 'reactstrap';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar></NavBar>
+      <Container className="themed-container" fluid={true}>
+            <Row>
+                <Col md={2} >
+                <SideBar></SideBar>
+                </Col>
+                <Col className="main-container">
+                    <Main>
+                      
+                    </Main>
+                </Col>
+            </Row>
+        </Container>
+      
+     
     </div>
   );
 }
